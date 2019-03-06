@@ -1,0 +1,68 @@
+<h1>Create a new plant</h1>
+<p>You can collaborate with our garden family</p>
+<div class="create-form">
+<form action="/create" method="post">
+  <div class="form-group">
+    <label for="title">Name</label>
+    <input class="form-control" type="text" id="title" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="">Scientific name:</label>
+    <input class="form-control"  type="text" name="theScientificName" id="" name="scientific_name">
+  </div>
+
+  <div class="form-group">
+    <label for="">Description</label>
+    <input class="form-control"  type="text" name="theDescription" id="" name="description">
+  </div>
+
+  <div class="form-group">
+    <label for="">Reviews:</label>
+    <input class="form-control"  type="text" name="theImage" id="" name="reviews">
+  </div>
+
+  <div class="form-group">
+    <label for="">Image URL:</label>
+    <input class="form-control"  type="text" name="theImage" id="" name="image_url">
+  </div>
+
+   <div class="form-group">
+    <label for="">Easy Care?</label>
+     <select class="form-control" name="theAuthor" id="" name="easy_care">
+      <option value="Easy care">Easy care</option>
+      <option value="Average level">Average level</option>
+ <option value="You need time!">You need time!</option>
+ 
+ </select>
+  </div>
+
+   <div class="form-group">
+    <label for="">Some advice</label>
+    <input class="form-control"  type="text" name="advice_care" id="">
+  </div>
+
+  <div class="form-group">
+    <label for="">pet friendly?</label>
+   <select class="form-control" name="pet_friendly" id="theAuthor">
+      <option value="Besties with cats and dog">Besties with cats and dog</option>
+      <option value="No!">No!</option>
+    </select>
+
+    {{!-- <input class="form-control"  type="text" name="theImage" id=""> --}}
+  </div>
+
+  <div class="form-group">
+    <label for="">Purifying air?</label>
+     <select class="form-control" name="purifying_air" id="theAuthor">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save the plant!</button>
+
+</form>
+
+</div>

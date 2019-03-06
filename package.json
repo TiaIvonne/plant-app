@@ -1,0 +1,28 @@
+{
+  "name": "starter-code",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "dev": "DEBUG=starter-code:* nodemon ./bin/www",
+    "dev-windows": "nodemon ./bin/www",
+    "debug": "nodemon --inspect ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.15.6",
+    "flash": "^1.1.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.4.17",
+    "morgan": "~1.9.0",
+    "partials": "^0.1.0",
+    "req-flash": "0.0.3"
+  }
+}

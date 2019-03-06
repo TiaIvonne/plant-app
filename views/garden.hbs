@@ -1,0 +1,22 @@
+
+{{!-- display board with plant's database --}}
+<h1>Our Garden</h1>
+
+  {{#each allPlants}}
+      <img src="{{this.image_url}}">
+      <h1>{{this.name}}</h1>
+      <i>{{this.scientific_name}}</i>
+      <p>{{this.description}}</p>
+        
+    <div class="interaction">
+      <button class="save-plant" data-plantid={{this._id}} >Save</button>
+      <a href="/">Share</a>
+      <a href="/garden/{{this._id}}">More information</a>
+    </div>
+        
+  {{/each}}
+
+
+
+
+

@@ -1,0 +1,22 @@
+<h1>My own garden</h1>
+
+<ul>
+ {{#each userPlants.likes}}
+<div>
+    <p>{{this.name}}</p>
+    <p>{{scientific_name}}</p>
+    <p>{{this.reviews}}</p>
+    <img src="{{this.image_url}}"
+</div>
+ 
+
+{{!-- social media interactions --}}
+<div class="social-interactions">
+<div class="sharethis-inline-share-buttons"></div>
+<span class="st_twitter_large" displayText="Tweet"></span>
+<span class="st_facebook_large" displayText="Facebook"></span>
+<span class="st_email_large" displayText="Email"></span>
+<span class="st_sharethis_large" displayText="ShareThis"></span>
+</div>
+{{/each}}
+</ul>
