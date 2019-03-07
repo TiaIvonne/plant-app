@@ -72,7 +72,6 @@ router.get('/auth/login',(req, res) => {
 
 //Post for login
 router.post('/auth/login', (req, res) =>{
-
   //validations for user and password
   User.findOne({username: req.body.username}, (err,result)=> {
       if(err){
@@ -108,7 +107,7 @@ router.post('/auth/login', (req, res) =>{
 router.get('/logout', (req,res, next)=>{
   req.session.destroy ((err) => {
     res.clearCookie('username');
-    res.redirect('/auth/login');
+    res.redirect('/');
   });
 });
 

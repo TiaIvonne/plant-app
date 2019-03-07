@@ -1,13 +1,97 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0%;
+  padding: 0%;
 }
 
+body {
+  background-color: #f4fdf4;
+  font-family: 'Roboto', sans-serif;
+}
 a {
   color: #00B7FF;
 }
-
 .create-form{
   width: 50%;
 }
+
+.background-main{
+  background-image: url("/images/plant.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: -webkit-fill-available;
+
+}
+
+.main{
+  padding: 250px;
+  font-size: 22px;
+  font-family: 'Gochi Hand', cursive;
+  
+  
+
+}
+
+.container{
+  margin: 0%;
+}
+
+.garden{
+  display: flex;
+  margin:10px;
+  padding: 10px;
+  
+  justify-content: center;
+
+}
+.col-md-4{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+}
+
+img{
+  height: 200px;
+  max-width: 100%;
+}
+
+.plant-item{
+  margin: 10px;
+  font-family: 'Bree Serif', serif;
+}
+
+.own-garden{
+  display: flex;
+  justify-content: center;
+  margin:10px;
+}
+
+.col-lg-10{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    display: flex;
+}
+
+.own-image{
+  width: 50%;
+}
+
+.mygarden-information{
+  padding: 20px;
+}
+.social-interactions{
+  padding: 0%;
+}
+
+footer{
+  
+    position: fixed;
+    background-color:#f4fdf4;;
+    color: black;
+    bottom: 0;
+    width: 100%;
+    padding: 1%;
+
+}
+
+
 

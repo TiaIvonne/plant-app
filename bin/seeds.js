@@ -46,6 +46,18 @@ const plantsArray = [
     pet_friendly:           "No!",
     purifying_air:          "Yes",
 
+  },
+  {
+    name:                   "George Harrison",
+    scientific_name  :      "Ficus",
+    description:            "Etereum, purifying air",
+    reviews:                ["J.Lennon: So much pisces plant"],
+    image_url:              "https://cdn.shopify.com/s/files/1/0044/6146/1619/products/image_ed9e36c6-cd8d-4a46-8287-eac75e442185_1296x1296.jpg?v=1528366706",
+    easy_care:              "Average level",
+    advice_care:            "George needs a lot of water, sun and humidity, peace and love",
+    pet_friendly:           "No!",
+    purifying_air:          "Yes",
+
   }
   
 ];

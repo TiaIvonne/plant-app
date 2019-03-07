@@ -7,7 +7,6 @@ const User= require("../model/Users.js");
 
 //get garden page an render all plants into garden page
 router.get('/garden', function(req, res, next) {
-
     Plant.find()
         .then((allPlants) => {
             res.render('garden', {allPlants});
@@ -54,7 +53,6 @@ router.post('/garden', function(req, res, next) {
     });
 
 });
-
 
 router.get('/garden/mygarden', function(req, res, next){
 
