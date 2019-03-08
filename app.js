@@ -11,11 +11,8 @@ const session      = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash        = require('req-flash');
 
-
-
-
 //connect with database
-mongoose.connect('process.env.MONGODB_URI', {useNewUrlParser: true}, function(err){
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}, function(err){
     if(err) console.log("ERROR",err);
     else console.log("connected to database garden");
 });
