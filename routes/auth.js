@@ -1,27 +1,32 @@
-// signup and login 
+/**
+ * @author Ivonne Y. Mendoza <imendoza@imendoza.io>
+ * authentication routes
+ */
+
 var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
 const User= require("../model/Users");
 
+/************************************** */
+//           Sign up section
+/************************************** */
+
+//1.render page
 router.get('/auth/signup',(req, res) => {
   res.render('signup', req.flash());
 });
 
-//validate and create a new user
+//2.validate and create a new user 
 router.post('/auth/signup', (req, res) =>{
 
   const username = req.body.username;
   const password = req.body.password;
 
-    
-  //check if username already exists and send an error
+//check if username already exists and send an error
   User.findOne({username:username})
     .then(username => {
-      if (username) {
-          console.log("meow");
-          
+      if (username) {          
           req.flash('errorMessage', "user already exists");
           res.redirect('/auth/signup');
           return;
@@ -34,74 +39,67 @@ router.post('/auth/signup', (req, res) =>{
       //   } 
 
       // }
-
     });
 
-    
-
-  //after validations create new user
-  const newUser = {
-      username: req.body.username,
-      password:req.body.password,
-    };
-    //debugger;
-    //use bcrypt
-    bcrypt.hash(req.body.password, 10, function(err,hash){
-      //store hash in password db
-      //debugger
-      newUser.password = hash;
-      User.create(newUser, (err) =>{
-        if(err) {
-            
-            console.log(err);}
-        else {
-            //debugger;
-            req.flash("message", "great success");
-            res.redirect('/auth/login');
-        }
-      });
-  
-    });
-       
+    //after validations create new user
+      const newUser = {
+        username: req.body.username,
+        password: req.body.password,
+      };
+        //use bcrypt
+          bcrypt.hash(req.body.password, 10, function(err,hash){
+              //store hash in password db
+              newUser.password = hash;
+              User.create(newUser, (err) =>{
+                if(err) {
+                  console.log(err);
+                }
+                else {
+                  req.flash("message", "great success");
+                  res.redirect('/auth/login');
+                }
+              });
+          });
 });
 
+
+/************************************** */
+//           Login section
+/************************************** */
+
+//render login page
 router.get('/auth/login',(req, res) => {
-  res.render('login', req.flash());
+  res.render('login.hbs', req.flash());
 });
 
 
-//Post for login
+//Post method for login
 router.post('/auth/login', (req, res) =>{
   //validations for user and password
   User.findOne({username: req.body.username}, (err,result)=> {
       if(err){
         req.flash("message", "Server error");
-        res.redirect("/auth/login");
+        res.redirect("/auth/login.hbs");
       }
       if(!result) {
         req.flash("message", "Couldn't find account");
-        res.redirect("/auth/login");
+        res.redirect("/auth/login.hbs");
       }
-        else{
-          bcrypt.compare(req.body.password, result.password, function (err, equal) {
-            if(err)res.status(500).send("error");
+      else{
+        bcrypt.compare(req.body.password, result.password, function (err, equal) {
+          if(err)res.status(500).send("error");
             else if (equal){
               req.session.user = result;
               res.cookie("username", req.body.username);
-              // res.status(200).send("logged in");
-            
               res.redirect('/garden');
-            }else{
+            }
+            else{
               res.status(403).send("invalid username or password");
             }
-            
           });
         }
-    }
-    );
+  });
 });
-
-
 
 //logout and clear cookies
 router.get('/logout', (req,res, next)=>{

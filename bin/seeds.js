@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/garden', {useNewUrlParser: true}, function
       console.log("connected to garden");
     }
 });
+
 //create array with plants
 const plantsArray = [
   {

@@ -1,0 +1,25 @@
+.main-own{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    font-family: 'Bree Serif', serif;
+    justify-content: center;
+}
+
+.own-garden{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:10px;
+}
+
+.own-image{
+    width: 50%;
+  }
+  
+.mygarden-information{
+    padding: 20px;
+}
+.social-interactions{
+    padding: 0%;
+}

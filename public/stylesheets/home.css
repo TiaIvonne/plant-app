@@ -1,0 +1,15 @@
+.background-main{
+    background-image: url("/images/plant.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: -webkit-fill-available;
+  }
+  
+.main{
+    padding: 250px;
+    font-size: 22px;
+    font-family: 'Gochi Hand', cursive;
+}
+
+
+  

@@ -1,6 +1,5 @@
 
 {{!-- display board with plant's database --}}
-
 <div class="garden">
   <div class="row">
     {{#each allPlants}}
@@ -10,16 +9,17 @@
             <h1>{{this.name}}</h1>
             <i>{{this.scientific_name}}</i>
             <p>{{this.description}}</p>
-          <div class="interactions">
-              <button class="save-plant" data-plantid={{this._id}} >Save</button>
-              <a href="/garden/{{this._id}}">More information</a>
-          </div>
+            <div class="interactions">
+                <div class="prueba">
+                  <button class="save-plant" data-plantid={{this._id}} >Save </button> 
+                </div>
+                <a href="/garden/{{this._id}}">More information</a>
+            </div>
         </div>
       </div>
     {{/each}}
-    </div>
-    </div>
-
+  </div> 
+</div>
 
 
 

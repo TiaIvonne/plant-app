@@ -17,7 +17,6 @@ mongoose.connect('mongodb://localhost/garden', {useNewUrlParser: true}, function
     else console.log("connected to database garden");
 });
 
-
 //declare routes
 var indexRouter   = require('./routes/index');
 var authRouter    = require('./routes/auth');
@@ -27,14 +26,13 @@ var createRouter  = require('./routes/create');
 
 
 var app = express();
-
-
 app.set( 'view engine', 'hbs' );
 app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: "XD"
 }));
+
 app.use(session({
   secret: "basic-auth-secret",
   cookie: { maxAge: 60000 },
@@ -45,15 +43,15 @@ app.use(session({
 }));
 
 app.use(flash());
-
 app.use((req, res, next) =>{
   res.locals.messages = req.flash();
   next();
 });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
 
+// app.set('view engine', 'hbs');
 app.engine( 'hbs', hbs( {
   extname: 'hbs',
   defaultLayout: 'layout',
@@ -67,7 +65,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//use app
+//use app 
 app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/', require('./routes/site-routes'));

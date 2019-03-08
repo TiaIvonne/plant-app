@@ -1,0 +1,9 @@
+.create-form{
+    width: 50%;
+}
+  
+.create-plant{
+    font-family: 'Bree Serif', serif;
+    padding: 40px;
+    display: -moz-grid;
+}

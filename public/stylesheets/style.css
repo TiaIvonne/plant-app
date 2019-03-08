@@ -1,3 +1,10 @@
+/* general configurations */
+
+@import "garden.css";
+@import "mygarden.css";
+@import "home.css";
+@import "createplant.css";
+
 *{
   margin: 0%;
   padding: 0%;
@@ -5,48 +12,10 @@
 
 body {
   background-color: #f4fdf4;
-  font-family: 'Roboto', sans-serif;
+
 }
 a {
   color: #00B7FF;
-}
-.create-form{
-  width: 50%;
-}
-
-.background-main{
-  background-image: url("/images/plant.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: -webkit-fill-available;
-
-}
-
-.main{
-  padding: 250px;
-  font-size: 22px;
-  font-family: 'Gochi Hand', cursive;
-  
-  
-
-}
-
-.container{
-  margin: 0%;
-}
-
-.garden{
-  display: flex;
-  margin:10px;
-  padding: 10px;
-  
-  justify-content: center;
-
-}
-.col-md-4{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  display: flex;
 }
 
 img{
@@ -54,44 +23,52 @@ img{
   max-width: 100%;
 }
 
-.plant-item{
-  margin: 10px;
+/* footer{
+  
+    position: absolute;
+    width: 100%;
+    background-color:#f4fdf4;;
+    color: black;
+    bottom: 0%;
+    padding: 5px;
+    font-family: 'Bree Serif', serif;
+
+} */
+
+button {
+  color: white;
+  border-radius: .25rem;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  cursor: pointer;
+  padding:.375rem .75rem;
+}
+
+/* include login and logout */
+#login{
   font-family: 'Bree Serif', serif;
 }
 
-.own-garden{
+
+.navbar-nav{
   display: flex;
-  justify-content: center;
-  margin:10px;
+  width: -webkit-fill-available;
 }
 
-.col-lg-10{
+
+li{
+  list-style: none;
+}
+
+
+/* .col-lg-10{
     margin-bottom: 50px;
     margin-top: 50px;
     display: flex;
 }
 
-.own-image{
-  width: 50%;
-}
-
-.mygarden-information{
-  padding: 20px;
-}
-.social-interactions{
-  padding: 0%;
-}
-
-footer{
-  
-    position: fixed;
-    background-color:#f4fdf4;;
-    color: black;
-    bottom: 0;
-    width: 100%;
-    padding: 1%;
-
-}
-
+.col-md-10{
+  display: flex;
+} */
 
 

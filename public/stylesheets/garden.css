@@ -1,0 +1,28 @@
+.garden{
+    display: flex;
+    margin:20px;
+    padding: 20px;
+    justify-content: center;
+  
+}
+.container{
+    margin: 0%;
+}
+.plant-item{
+    margin: 10px;
+    font-family: 'Bree Serif', serif;
+}
+.details{
+    margin: 50px;
+    font-family: 'Bree Serif', serif;
+}
+.col-md-4{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+}
+.grid{
+    margin:30px;
+    display: flex;
+    justify-content: space-around;
+}

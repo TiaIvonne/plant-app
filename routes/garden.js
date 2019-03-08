@@ -1,6 +1,9 @@
+/**
+ * @author Ivonne Y. Mendoza <imendoza@imendoza.io>
+ * route display a page garden with all plants, details, and more features
+ */
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
 const Plant= require("../model/Plants.js");
 const User= require("../model/Users.js");
 
@@ -9,7 +12,7 @@ const User= require("../model/Users.js");
 router.get('/garden', function(req, res, next) {
     Plant.find()
         .then((allPlants) => {
-            res.render('garden', {allPlants});
+            res.render('garden.hbs', {allPlants});
         })
         .catch((err) =>{
             console.log("error", err);
@@ -29,49 +32,33 @@ router.get('/garden/:id', (req, res, next) =>{
         });
 });
 
-//save and add plant into my own plant's collection
 
-
-// get my garden page
+// get my garden page and save and add plant into my own plant collection
 router.post('/garden', function(req, res, next) {
-    //debugger;
-
     let plantId = req.body.plantId;
     let userId = req.session.user._id;
-    // debugger;
     User.findByIdAndUpdate(userId, { $push: { likes: plantId }})
-    // User.findByIdAndUpdate(userId, {upsert: true}, {$push: {likes: plantId}})
-    .then(() => { 
-        console.log('update!');
-    // debugger;
-        res.json({message: "plant saved"});
-    })
-    .catch(err => { 
-    // debugger;
-        res.json({message: "error"});
-        console.log('error:', err);
-    });
-
+        .then(() => { 
+            console.log('update!');
+            res.json({message: "plant saved"});
+        })
+        .catch(err => { 
+            res.json({message: "error"});
+            console.log('error:', err);
+        });
 });
 
+//render my garden page, with my plants already save in previous method
 router.get('/garden/mygarden', function(req, res, next){
-
     let user = req.session.user;
     User.findById(user._id).populate('likes').exec()
-    .then((userPlants) => {
+        .then((userPlants) => {
         //render index page with all plants
-        res.render('garden/mygarden.hbs', {userPlants});
-    })
-    .catch((err)=>{
-        console.log("error", err);
-     
-    });
-
+        res.render('garden/mygarden', {userPlants});
+        })
+        .catch((err)=>{
+            console.log("error", err);
+        });
 });
-
-
-
-
-
 
 module.exports = router;
