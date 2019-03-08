@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+    console.log("hiii")
     //display username and logout button only if user it's connected
     $("#nav-username").hide();
     $("#nav-logout").hide();
@@ -8,8 +9,10 @@ $(document).ready(function () {
             var value = re.exec(document.cookie);
             return (value != null) ? decodeURI(value[1]) : null;
         }
+        
         let username = getCookie("username");
             function displayNav() {
+             
                 if(username) {
                     $("#nav-username").show();
                     $("#nav-username").text("Hello! " + username);
