@@ -23,3 +23,8 @@
 .social-interactions{
     padding: 0%;
 }
+
+:required{
+    background: lightyellow;
+
+}

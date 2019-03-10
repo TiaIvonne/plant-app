@@ -12,7 +12,7 @@ const User= require("../model/Users.js");
 router.get('/garden', function(req, res, next) {
     Plant.find()
         .then((allPlants) => {
-            res.render('garden.hbs', {allPlants});
+            res.render('garden/garden.hbs', {allPlants});
         })
         .catch((err) =>{
             console.log("error", err);

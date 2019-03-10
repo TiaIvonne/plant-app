@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
-    console.log("hiii")
+   
+    
     //display username and logout button only if user it's connected
     $("#nav-username").hide();
     $("#nav-logout").hide();
@@ -17,6 +18,8 @@ $(document).ready(function () {
                     $("#nav-username").show();
                     $("#nav-username").text("Hello! " + username);
                     $("#nav-logout").show();
+                    $("#signup-link").hide();
+                    $("#login-link").hide();
                 }
             }
         displayNav();
@@ -25,6 +28,17 @@ $(document).ready(function () {
             $("#nav-logout").hide();
         });
      
+    // recover password
+
+    // Email.send({
+    //     SecureToken : "2a099539-4244-4232-80cb-3afd0f06ca6e",
+    //     To : 'them@website.com',
+    //     From : "you@isp.com",
+    //     Subject : "This is the subject",
+    //     Body : "And this is the body"
+    // }).then(
+    //   message => alert(message)
+    // );
 
     //save plant function
     $(".save-plant").click(function(e){

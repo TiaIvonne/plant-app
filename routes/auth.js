@@ -14,7 +14,7 @@ const User= require("../model/Users");
 
 //1.render page
 router.get('/auth/signup',(req, res) => {
-  res.render('signup', req.flash());
+  res.render('auth/signup.hbs',req.flash());
 });
 
 //2.validate and create a new user 
@@ -69,7 +69,7 @@ router.post('/auth/signup', (req, res) =>{
 
 //render login page
 router.get('/auth/login',(req, res) => {
-  res.render('login.hbs', req.flash());
+  res.render('auth/login.hbs', req.flash());
 });
 
 
@@ -94,7 +94,9 @@ router.post('/auth/login', (req, res) =>{
               res.redirect('/garden');
             }
             else{
-              res.status(403).send("invalid username or password");
+              // res.status(403).send("invalid username or password");
+              req.flash("message", "Wrong password, try again");
+              res.redirect("/auth/login.hbs");
             }
           });
         }
@@ -113,9 +115,10 @@ router.get('/logout', (req,res, next)=>{
 
 
 
+//test remember-me only for test, not working yet
 
-
-
-
+router.get('/auth/remember', (req, res, next)=>{
+  res.render('auth/remember.hbs');
+});
 
 module.exports = router;

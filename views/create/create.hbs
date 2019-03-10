@@ -6,32 +6,36 @@
     <form action="/create" method="post">
       <div class="form-group">
         <label for="title">Name</label>
-        <input class="form-control" type="text" id="title" name="name" required>
+        <input class="form-control" type="text" id="" name="name" required>
       </div>
 
       <div class="form-group">
         <label for="">Scientific name:</label>
-        <input class="form-control" type="text" name="theScientificName" id="" name="scientific_name" title="Please only characters" required>
+        <input class="form-control" type="text" id="" name="scientific_name" title="Please only characters" required>
       </div>
-
+      <div>
+           {{#if errorMessage}}
+            <p style="color:red;">{{errorMessage}}</p>
+          {{/if}}
+      </div>
       <div class="form-group">
         <label for="">Description</label>
-        <input class="form-control"  type="text" name="theDescription" id="" name="description">
+        <input class="form-control"  type="text" id="" name="description" required>
       </div>
 
       <div class="form-group">
         <label for="">Review:</label>
-        <input class="form-control"  type="text" name="theImage" id="" name="reviews">
+        <input class="form-control"  type="text" id="" name="reviews" required>
       </div>
 
       <div class="form-group">
         <label for="">Image URL:</label>
-        <input class="form-control"  type="text" name="theImage" id="" name="image_url">
+        <input class="form-control"  type="text" id="" name="image_url" required>
       </div>
 
       <div class="form-group">
         <label for="">Easy Care?</label>
-        <select class="form-control" name="theAuthor" id="" name="easy_care">
+        <select class="form-control" id="" name="easy_care" required>
           <option value="Easy care">Easy care</option>
           <option value="Average level">Average level</option>
           <option value="You need time!">You need time!</option>
@@ -40,12 +44,12 @@
 
       <div class="form-group">
         <label for="">Some advice</label>
-        <input class="form-control"  type="text" name="advice_care" id="">
+        <input class="form-control"  type="text" name="advice_care" id="" required>
       </div>
 
       <div class="form-group">
         <label for="">pet friendly?</label>
-        <select class="form-control" name="pet_friendly" id="theAuthor">
+        <select class="form-control" name="pet_friendly" id="" required>
           <option value="Besties with cats and dog">Besties with cats and dog</option>
           <option value="No!">No!</option>
         </select>
@@ -54,7 +58,7 @@
 
       <div class="form-group">
         <label for="">Purifying air?</label>
-        <select class="form-control" name="purifying_air" id="theAuthor">
+        <select class="form-control" name="purifying_air" id="" required>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>

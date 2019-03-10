@@ -7,7 +7,7 @@ const Schema   = mongoose.Schema;
 const plantSchema = new Schema ({
   //create new Schema with validations
   name:             { type:  String, unique: true},
-  scientific_name:  { type:  String },
+  scientific_name:  { type:  String, unique: true},
   description:      { type:  String },  
   reviews:          { type:  Array  },
   image_url:        { type:  String },
